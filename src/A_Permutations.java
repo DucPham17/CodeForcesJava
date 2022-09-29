@@ -1,0 +1,44 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class A_Permutations {
+    static class FastScanner {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st=new StringTokenizer("");
+        String next() {
+            while (!st.hasMoreTokens())
+                try {
+                    st=new StringTokenizer(br.readLine());
+                } catch (IOException e) {}
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+        long nextLong() {
+            return Long.parseLong(next());
+        }
+    }
+    public static void main(String[] args) {
+        FastScanner fs = new FastScanner();
+        Integer len = fs.nextInt();
+        List<Integer> list = new ArrayList<>();
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        for(int i = 0; i < len; i++){
+            list.add(fs.nextInt());
+        }
+        for(int i = 0; i < len; i++){
+            hm.put(fs.nextInt(),hm.size());
+        }
+        for(int i = 1; i < len; i++){
+            if(hm.get(list.get(i)) < hm.get(list.get(i-1))){
+                System.out.println(len - i);
+                return;
+            }
+        }
+        System.out.println(0);
+    }
+}
