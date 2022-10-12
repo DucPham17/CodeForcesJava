@@ -1,6 +1,9 @@
 public class sample {
     public static void main(String[] args) {
-        System.out.println(102 ^ 104 ^ 106 ^ 108);
-        System.out.println(103 ^ 105 ^ 107 ^ 109);
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < 4000; i++){
+            sb.append("z");
+        }
+        System.out.println(sb.toString());
     }
 }

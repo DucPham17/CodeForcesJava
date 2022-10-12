@@ -31,6 +31,6 @@ public class template {
     }
 
     public static void main(String[] args) {
-
+        C_Binary_String.FastScanner fs = new C_Binary_String.FastScanner();
     }
 }
